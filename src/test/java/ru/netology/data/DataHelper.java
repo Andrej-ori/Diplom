@@ -10,7 +10,15 @@ import static ru.netology.data.DateGenerator.*;
 import static ru.netology.data.UserGenerator.*;
 import static ru.netology.data.CVCGenerator.*;
 public class DataHelper {
-    private DataHelper() {
+    private DataHelper() {}
+
+    @Value
+    public static class  CardInfo{
+        private String number;
+        private String year;
+        private String month;
+        private String user;
+        private String cvc;
     }
 
     public static Faker faker = new Faker(new Locale("en"));
@@ -289,13 +297,5 @@ public class DataHelper {
                 getValidDate().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 "");
-    }
-    @Value
-    public static class  CardInfo{
-        private String number;
-        private String year;
-        private String month;
-        private String user;
-        private String cvc;
     }
 }

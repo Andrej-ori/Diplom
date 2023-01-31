@@ -5,10 +5,14 @@ import lombok.Value;
 
 public class CVCGenerator {
 
-    private CVCGenerator(){
+    private CVCGenerator(){}
+
+    @Value
+    public static class CVCNumber {
+        private String CVCNumber;
     }
 
-// получение кода из 3х цифр
+    // получение кода из 3х цифр
     public static CVCNumber getValidCVCNumber() {
         return new CVCNumber(faker.numerify("###"));
     }
@@ -21,10 +25,5 @@ public class CVCGenerator {
 //  Получение кода из 1 цифры
     public static CVCNumber  getInvalidCVVNumberWithSingleNumber() {
         return new CVCNumber(faker.numerify("#"));
-    }
-
-    @Value
-    public static class CVCNumber {
-        private String CVCNumber;
     }
 }

@@ -9,7 +9,13 @@ import java.time.format.DateTimeFormatter;
 import static ru.netology.data.DataHelper.faker;
 
 public class DateGenerator {
-    private DateGenerator() {
+    private DateGenerator() {}
+
+    @Value
+    public static class Date{
+        private String year;
+        private String month;
+
     }
 
     private static final LocalDate actualDate = LocalDate.now();
@@ -88,11 +94,5 @@ public class DateGenerator {
         int number = faker.number().numberBetween(0, 9);
         String year = String.valueOf(number);
         return new Date(year, actualDate.format(monthTimeFormatter));
-    }
-@Value
-    public static class Date{
-        private String year;
-        private String month;
-
     }
 }

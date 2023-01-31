@@ -5,7 +5,11 @@ import lombok.Value;
 import java.util.Locale;
 
 public class UserGenerator {
-    private UserGenerator(){
+    private UserGenerator(){}
+
+    @Value
+    public static class User {
+        private String userName;
     }
 
     public static Faker fakerEn = new Faker(new Locale("en"));
@@ -37,7 +41,6 @@ public class UserGenerator {
         return new User(fakerRu.name().fullName());
     }
 
-
 //    Имя с цифрой
     public static User getInvalidNameWithNambers() {
         return new User(fakerEn.name().fullName() + fakerEn.numerify("#"));
@@ -48,15 +51,8 @@ public class UserGenerator {
         return new User(fakerEn.regexify("._%=+-!@][&^()*#;:{8}"));
     }
 
-
 //    Имя из иероглифов
     public static User getInvalidNameInCN() {
         return new User(fakerCN.name().fullName());
-    }
-
-
-    @Value
-    public static class User {
-        private String userName;
     }
 }
