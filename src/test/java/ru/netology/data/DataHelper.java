@@ -239,6 +239,16 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
+//    Отправка НЕ валидных данных (Не верный формат номера карты(12 цифр вместо 16); валидный год, валидный месяц,
+//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
+public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
+    return new CardInfo(InvalidFormatCardNumber(),
+            getValidDate().getYear(),
+            getValidDate().getMonth(),
+            getValidNameInUppercase().getUserName(),
+            getValidCVCNumber().getCVCNumber());
+}
+
 //    ПУСТЫЕ ПОЛЯ
 
 //    Отправка формы с пустыми полями

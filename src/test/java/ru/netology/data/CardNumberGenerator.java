@@ -25,4 +25,9 @@ public class CardNumberGenerator {
     public static String InvalidCardNumber() {
         return faker.numerify("#### #### #### ####");
     }
+
+//    Номер карты с 12 цифрами
+    public static String InvalidFormatCardNumber() {
+        return "#### #### ####";
+    }
 }
