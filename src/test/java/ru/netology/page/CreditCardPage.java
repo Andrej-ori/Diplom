@@ -1,8 +1,10 @@
 package ru.netology.page;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -20,10 +22,11 @@ public class CreditCardPage extends StartPage{
     private static final SelenideElement buyWithCreditCardButton = $(byText("Купить в кредит"));
 
 //      селекторы для полей ввода данных
+private final ElementsCollection fields = $$(".input__control");
     private final SelenideElement fieldCardNumber = $("[placeholder='0000 0000 0000 0000']");
     private final SelenideElement fieldMonth = $("[placeholder='08']");
     private final SelenideElement fieldYear = $("[placeholder='22']");
-    private final SelenideElement fieldUserName = $$("[class='.input__control']").get(3);
+    private final SelenideElement fieldUserName = fields.get(3);
     private final SelenideElement fieldCVC = $("[placeholder='999']");
 
 //    селектор для кнопки Продолжить
@@ -50,7 +53,7 @@ public class CreditCardPage extends StartPage{
         return new PaymentCardPage();
     }
 
-//    Общая форма отправки данных
+//    Общая форма для  отправки данных
     public void fillTheForm(DataHelper.CardInfo cardInformation) {
         fieldCardNumber.setValue(cardInformation.getNumber());
         fieldMonth.setValue(cardInformation.getMonth());
@@ -60,7 +63,14 @@ public class CreditCardPage extends StartPage{
         buttonContinue.click();
     }
 
+//    Проверка видимости всплывающего окна "Операция одобрена Банком."
 
-    public void paymentCardPageHead() {
+    public void successNotificationCreditCardPage() {
+        successNotification.shouldBe(visible, Duration.ofSeconds(15));
+    }
+
+//    Проверка видимости всплывающего окна "Ошибка! Банк отказал в проведении операции."
+    public void failNotificationCreditCardPage() {
+        failNotification.shouldBe(visible, Duration.ofSeconds(15));
     }
 }

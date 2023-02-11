@@ -1,6 +1,7 @@
 package ru.netology.page;
 
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
 
 import java.time.Duration;
@@ -9,8 +10,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static java.time.Duration.ofSeconds;
-
 
 public class PaymentCardPage extends StartPage {
 
@@ -22,10 +21,11 @@ public class PaymentCardPage extends StartPage {
     private static final SelenideElement buyWithCreditCardButton = $(byText("Купить в кредит"));
 
 //      селекторы для полей ввода данных
+    private final ElementsCollection fields = $$(".input__control");
     private final SelenideElement fieldCardNumber = $("[placeholder='0000 0000 0000 0000']");
     private final SelenideElement fieldMonth = $("[placeholder='08']");
     private final SelenideElement fieldYear = $("[placeholder='22']");
-    private final SelenideElement fieldUserName = $$("[class='.input__control']").get(3);
+    private final SelenideElement fieldUserName = fields.get(3);
     private final SelenideElement fieldCVC = $("[placeholder='999']");
 
 //    селектор для кнопки Продолжить
@@ -52,7 +52,7 @@ public class PaymentCardPage extends StartPage {
         return new CreditCardPage();
     }
 
-//    Общая форма отправки данных
+//    Общая форма для отправки данных
     public void fillTheForm(DataHelper.CardInfo cardInformation) {
         fieldCardNumber.setValue(cardInformation.getNumber());
         fieldMonth.setValue(cardInformation.getMonth());
@@ -62,14 +62,17 @@ public class PaymentCardPage extends StartPage {
         buttonContinue.click();
     }
 
-    public void successNotificationCardPage() {
+//    Проверка видимости всплывающего окна "Операция одобрена Банком."
+    public void successNotificationPaymentCardPage() {
         successNotification.shouldBe(visible, Duration.ofSeconds(15));
     }
 
-    public void failNotificationCardPage() {
-        failNotification.shouldBe(visible);
+    //    Проверка видимости всплывающего окна "Ошибка! Банк отказал в проведении операции."
+    public void failNotificationPaymentCardPage() {
+        failNotification.shouldBe(visible, Duration.ofSeconds(15));
 
     }
+
 
     public void  errorFormatMessageCardPage() {
         errorFormatMessage.shouldBe(visible);

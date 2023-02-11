@@ -18,7 +18,7 @@ public class StartPage {
     private static final SelenideElement hedar = $(byText("Путешествие дня"));
 
 //   Проверка открытия страницы
-    public StartPage() {
+    public void startPageHedar() {
         hedar.shouldBe(visible);
     }
 
