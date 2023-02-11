@@ -9,11 +9,13 @@ import static ru.netology.data.CardNumberGenerator.*;
 import static ru.netology.data.DateGenerator.*;
 import static ru.netology.data.UserGenerator.*;
 import static ru.netology.data.CVCGenerator.*;
+
 public class DataHelper {
-    private DataHelper() {}
+    private DataHelper() {
+    }
 
     @Value
-    public static class  CardInfo{
+    public static class CardInfo {
         private String number;
         private String year;
         private String month;
@@ -25,9 +27,11 @@ public class DataHelper {
 
 //    ВАЛИДНЫЕ ДАННЫЕ
 
+//    Одобренный номер карты
+
 //    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
-    public static CardInfo getValidCardInfo() {
+    public static CardInfo getValidCardInfoApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
                 getValidDate().getYear(),
                 getValidDate().getMonth(),
@@ -37,7 +41,7 @@ public class DataHelper {
 
 //    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Валидное имя владельца через пробел(Латиница Верхний регистр), валидный CVC код
-    public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpace() {
+    public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpaceApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
                 getValidDate().getYear(),
                 getValidDate().getMonth(),
@@ -47,7 +51,7 @@ public class DataHelper {
 
 //    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Валидное имя владельца через дефис(Латиница Верхний регистр), валидный CVC код
-    public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphen() {
+    public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphenApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
                 getValidDate().getYear(),
                 getValidDate().getMonth(),
@@ -57,7 +61,7 @@ public class DataHelper {
 
 //    Отправка Валидных данных (Одобренный номер карты; текущий год, текущий месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
-    public static CardInfo getValidCardInfoCurrentDate() {
+    public static CardInfo getValidCardInfoCurrentDateApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
                 getCurrentDate().getYear(),
                 getCurrentDate().getMonth(),
@@ -65,11 +69,96 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
+//    Заблокированный номер карты
+
+//    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoDeclinedCardNumber() {
+        return new CardInfo(DeclinedCardNumber(),
+                getValidDate().getYear(),
+                getValidDate().getMonth(),
+                getValidNameInUppercase().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+//    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+//    Валидное имя владельца через пробел(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpaceDeclinedCardNumber() {
+        return new CardInfo(DeclinedCardNumber(),
+                getValidDate().getYear(),
+                getValidDate().getMonth(),
+                getValidNameInUppercaseSeparatedBySpace().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+//    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+//    Валидное имя владельца через дефис(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphenDeclinedCardNumber() {
+        return new CardInfo(DeclinedCardNumber(),
+                getValidDate().getYear(),
+                getValidDate().getMonth(),
+                getValidNameInUppercaseSeparatedByHyphen().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+    //    Отправка Валидных данных (Одобренный номер карты; текущий год, текущий месяц,
+//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoCurrentDateDeclinedCardNumber() {
+        return new CardInfo(DeclinedCardNumber(),
+                getCurrentDate().getYear(),
+                getCurrentDate().getMonth(),
+                getValidNameInUppercase().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+//    Случайный номер карты
+
+    //    Отправка Валидных данных (Случайный номер карты; валидный год, валидный месяц,
+//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoRandomCardNumber() {
+        return new CardInfo(RandomCardNumber(),
+                getValidDate().getYear(),
+                getValidDate().getMonth(),
+                getValidNameInUppercase().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+    //    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+//    Валидное имя владельца через пробел(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpaceRandomCardNumber() {
+        return new CardInfo(RandomCardNumber(),
+                getValidDate().getYear(),
+                getValidDate().getMonth(),
+                getValidNameInUppercaseSeparatedBySpace().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+    //    Отправка валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+//    Валидное имя владельца через дефис(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphenRandomCardNumber() {
+        return new CardInfo(RandomCardNumber(),
+                getValidDate().getYear(),
+                getValidDate().getMonth(),
+                getValidNameInUppercaseSeparatedByHyphen().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+    //    Отправка Валидных данных (Одобренный номер карты; текущий год, текущий месяц,
+//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
+    public static CardInfo getValidCardInfoCurrentDateRandomCardNumber() {
+        return new CardInfo(RandomCardNumber(),
+                getCurrentDate().getYear(),
+                getCurrentDate().getMonth(),
+                getValidNameInUppercase().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
+
+
 //    НЕ ВАЛИДНЫЕ ДАННЫЕ
 
 //    ИМЯ ВЛАДЕЛЬЦА КАРТЫ
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Не валидное имя владельца(Латиница Первая заглавная остальные строчные),
 //    валидный CVC код
     public static CardInfo getInvalidCardInfoNameLowercase() {
@@ -83,7 +172,7 @@ public class DataHelper {
 //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Не валидное имя владельца(Кириллица), валидный CVC код
 
-    public static CardInfo getInvalidCardInfoNameInCirillic() {
+    public static CardInfo getInvalidCardInfoNameInCyrillic() {
         return new CardInfo(ApprovedCardNumber(),
                 getValidDate().getYear(),
                 getValidDate().getMonth(),
@@ -91,9 +180,9 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Не валидное имя владельца(Имя с цифрой), валидный CVC код
-    public static CardInfo getInvCardInfoNameWithNamber() {
+    public static CardInfo getInvCardInfoNameWithNumber() {
         return new CardInfo(ApprovedCardNumber(),
                 getValidDate().getYear(),
                 getValidDate().getMonth(),
@@ -101,7 +190,7 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Не валидное имя владельца(Имя из спецсимволов), валидный CVC код
     public static CardInfo getInvCardInfoNameWithSymbol() {
         return new CardInfo(ApprovedCardNumber(),
@@ -111,7 +200,7 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Не валидное имя владельца(Имя из иероглифов), валидный CVC код
     public static CardInfo getInvCardInfoNameInCN() {
         return new CardInfo(ApprovedCardNumber(),
@@ -123,7 +212,7 @@ public class DataHelper {
 
 //    ДАТА (ГОД)
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; год оканчания действия больше чем через 5 лет,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; год оканчания действия больше чем через 5 лет,
 //    валидный месяц, Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getInvalidCardInfoDateWithExpirationMoreThatFiveYears() {
         return new CardInfo(ApprovedCardNumber(),
@@ -133,7 +222,7 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; год действия карты истек,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; год действия карты истек,
 //    валидный месяц, Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getInvCardInfoDateWithPreviousYears() {
         return new CardInfo(ApprovedCardNumber(),
@@ -143,7 +232,7 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; Не валидное значение года (одна цифра),
+    //    Отправка НЕ валидных данных (Одобреный номер карты; Не валидное значение года (одна цифра),
 //    текущий месяц, Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getInvalidCardInfoDateWithInvalidYearInfo() {
         return new CardInfo(ApprovedCardNumber(),
@@ -155,7 +244,7 @@ public class DataHelper {
 
 //    ДАТА (МЕСЯЦ)
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; текущий год,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; текущий год,
 //    месяц действия карты истек , Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getInvCardInfoDateWithPreviousMonths() {
         return new CardInfo(ApprovedCardNumber(),
@@ -165,7 +254,7 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; текущий год, Не валидное значение месяца(13-99)
+    //    Отправка НЕ валидных данных (Одобреный номер карты; текущий год, Не валидное значение месяца(13-99)
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getInvCardInfoDateWithInvalidMonthInfo() {
         return new CardInfo(ApprovedCardNumber(),
@@ -175,7 +264,7 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; текущий год, Не валидное значение месяца(00)
+    //    Отправка НЕ валидных данных (Одобреный номер карты; текущий год, Не валидное значение месяца(00)
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getInvalidCardInfoDateWithInvalidMonthInfo00() {
         return new CardInfo(ApprovedCardNumber(),
@@ -185,19 +274,19 @@ public class DataHelper {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; текущий год, Не валидное значение месяца(одна цифра),
+    //    Отправка НЕ валидных данных (Одобреный номер карты; текущий год, Не валидное значение месяца(одна цифра),
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
-        public static CardInfo getInvalidCardInfoDateWithInvalidMonthInfoOneNamber() {
-            return new CardInfo(ApprovedCardNumber(),
-                    getDateWithInvalidMonthInfoOneNamber().getYear(),
-                    getDateWithInvalidMonthInfoOneNamber().getMonth(),
-                    getValidNameInUppercase().getUserName(),
-                    getValidCVCNumber().getCVCNumber());
-        }
+    public static CardInfo getInvalidCardInfoDateWithInvalidMonthInfoOneNumber() {
+        return new CardInfo(ApprovedCardNumber(),
+                getDateWithInvalidMonthInfoOneNamber().getYear(),
+                getDateWithInvalidMonthInfoOneNamber().getMonth(),
+                getValidNameInUppercase().getUserName(),
+                getValidCVCNumber().getCVCNumber());
+    }
 
 //        CVC КОД
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), НЕ валидный CVC код(две цифры)
     public static CardInfo getInvalidCardInfoCVCNumberWithTwoNumbers() {
         return new CardInfo(ApprovedCardNumber(),
@@ -207,7 +296,7 @@ public class DataHelper {
                 getInvalidCVCNumberWithTwoNumbers().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), НЕ валидный CVC код(одна цифра)
     public static CardInfo getInvalidCardInfoCVCNumberWithSingleNumber() {
         return new CardInfo(ApprovedCardNumber(),
@@ -219,39 +308,19 @@ public class DataHelper {
 
 //    КАРТЫ
 
-//    Отправка НЕ валидных данных (Заблокированный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Не верный формат номера карты(12 цифр вместо 16); валидный год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
-    public static CardInfo getInvalidCardInfoDeclinedCardNumber() {
-        return new CardInfo(DeclinedCardNumber(),
+    public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
+        return new CardInfo(InvalidFormatCardNumber(),
                 getValidDate().getYear(),
                 getValidDate().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
-
-//    Отправка НЕ валидных данных (Случайный номер карты; валидный год, валидный месяц,
-//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
-    public static CardInfo getInvalidCardInfoInvalidCardNumber() {
-        return new CardInfo(InvalidCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
-                getValidNameInUppercase().getUserName(),
-                getValidCVCNumber().getCVCNumber());
-    }
-
-//    Отправка НЕ валидных данных (Не верный формат номера карты(12 цифр вместо 16); валидный год, валидный месяц,
-//    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
-public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
-    return new CardInfo(InvalidFormatCardNumber(),
-            getValidDate().getYear(),
-            getValidDate().getMonth(),
-            getValidNameInUppercase().getUserName(),
-            getValidCVCNumber().getCVCNumber());
-}
 
 //    ПУСТЫЕ ПОЛЯ
 
-//    Отправка формы с пустыми полями
+    //    Отправка формы с пустыми полями
     public static CardInfo getCardInfoWithEmptyData() {
         return new CardInfo("",
                 "",
@@ -260,7 +329,7 @@ public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
                 "");
     }
 
-//    Отправка НЕ валидных данных (пустая форма всесто номера карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (пустая форма всесто номера карты; валидный год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getCardInfoWithEmptyCardNumber() {
         return new CardInfo("",
@@ -270,7 +339,7 @@ public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; Пустая форма в поле Год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; Пустая форма в поле Год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getCardInfoWithEmptyYear() {
         return new CardInfo(ApprovedCardNumber(),
@@ -279,7 +348,8 @@ public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, Пустая форма в поле Месяц,
+
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, Пустая форма в поле Месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     public static CardInfo getCardInfoWithEmptyMonth() {
         return new CardInfo(ApprovedCardNumber(),
@@ -289,7 +359,7 @@ public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Пустая форма в поле Владелец, валидный CVC код
     public static CardInfo getCardInfoWithEmptyUser() {
         return new CardInfo(ApprovedCardNumber(),
@@ -299,7 +369,7 @@ public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
                 getValidCVCNumber().getCVCNumber());
     }
 
-//    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
+    //    Отправка НЕ валидных данных (Одобреный номер карты; валидный год, валидный месяц,
 //    Валидное имя владельца(Латиница Верхний регистр), Пустая форма в поле CVC код
     public static CardInfo getCardInfoWithEmptyCVC() {
         return new CardInfo(ApprovedCardNumber(),

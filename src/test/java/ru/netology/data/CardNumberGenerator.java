@@ -16,7 +16,7 @@ public class CardNumberGenerator {
     }
 
 //    номер случайной карты
-    public static String InvalidCardNumber() {
+    public static String RandomCardNumber() {
         return faker.numerify("#### #### #### ####");
     }
 

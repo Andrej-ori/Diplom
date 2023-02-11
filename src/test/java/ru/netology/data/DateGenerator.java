@@ -31,14 +31,23 @@ public class DateGenerator {
     //Если год будет увеличен на 5 лет, то значение месяца не будет превышать текущее значение
     //Если год останется прежним, то значение месяца будет не меньше текущего
     public static Date getValidDate() {
-        int numberOfYearsAdded = faker.number().numberBetween(0, 5);
+        int numberOfYeatsAdded = faker.number().numberBetween(0, 5);
         Month month = actualDate.getMonth();
-        if (numberOfYearsAdded ==5) {
-            month = actualDate.minusMonths(faker.number().numberBetween(0, actualDate.getMonth().getValue() - 1)).getMonth();
-        } else if (numberOfYearsAdded == 0) {
-            month = actualDate.plusMonths(faker.number().numberBetween(1, 12 - actualDate.getMonth().getValue())).getMonth();
+        if (numberOfYeatsAdded == 5) {
+            month = actualDate.minusMonths(faker.number()
+                    .numberBetween(0, actualDate.getMonth().getValue() - 1)).getMonth();
+//            LocalDate newDate = LocalDate.of(actualDate.plusYears(numberOfYeatsAdded).getYear(),
+//                    month, actualDate.getDayOfMonth());
+        } else {
+            if (numberOfYeatsAdded == 0) {
+                month = actualDate.plusMonths(faker.number()
+                        .numberBetween(1, 12 - actualDate.getMonth().getValue())).getMonth();
+            }
+//            LocalDate newDate = LocalDate.of(actualDate.plusYears(numberOfYeatsAdded).getYear(),
+//                    month, actualDate.getDayOfMonth());
         }
-        LocalDate newDate = LocalDate.of(actualDate.plusYears(numberOfYearsAdded).getYear(), month, actualDate.getDayOfYear());
+        LocalDate newDate = LocalDate.of(actualDate.plusYears(numberOfYeatsAdded).getYear(),
+                    month, actualDate.getDayOfMonth());
         return new Date(newDate.format(yearTimeFormatter), newDate.format(monthTimeFormatter));
     }
 
