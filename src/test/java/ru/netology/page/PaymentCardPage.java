@@ -67,7 +67,7 @@ public class PaymentCardPage extends StartPage {
         successNotification.shouldBe(visible, Duration.ofSeconds(15));
     }
 
-    //    Проверка видимости всплывающего окна "Ошибка! Банк отказал в проведении операции."
+//    Проверка видимости всплывающего окна "Ошибка! Банк отказал в проведении операции."
     public void failNotificationPaymentCardPage() {
         failNotification.shouldBe(visible, Duration.ofSeconds(15));
 
