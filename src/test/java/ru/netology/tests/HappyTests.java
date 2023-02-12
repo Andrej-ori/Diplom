@@ -1,25 +1,26 @@
 package ru.netology.tests;
 
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.Test;
+import ru.netology.data.BaseSelenideTest;
+import ru.netology.page.StartPage;
 
-import org.junit.jupiter.api.*;
-import ru.netology.page.*;
-
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.data.DataHelper.*;
 
-public class HappyTests {
+public class HappyTests extends BaseSelenideTest {
 
-    @BeforeAll
-    static void setUp() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-    }
-
-    @AfterAll
-    static void tearDown() {
-        SelenideLogger.removeListener("allure");
-    }
+//    /*
+//    Подключение Allure
+//     */
+//    @BeforeAll
+//    static void setUpAll() {
+//        SelenideLogger.addListener("allure", new AllureSelenide());
+//    }
+//
+//    @AfterAll
+//    static void tearDownAll() {
+//        SelenideLogger.removeListener("allure");
+//    }
 
         /*
           ОТКРЫТИЕ СРАНИЦЫ; ПЕРХОД НА ФОРМЫ ДЛЯ ЗАПАЛНЕНИЯ ДАННЫХ; ПЕРЕХОД С ФОРМЫ НА ФОРМУ
@@ -27,6 +28,7 @@ public class HappyTests {
 №1.     Открытие страницы "Путишествие Дня"
          */
     @Test
+
     void shouldVoidStartPage() {
         open("http://localhost:8080");
         var startPage = new StartPage();
