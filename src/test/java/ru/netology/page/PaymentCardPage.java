@@ -6,8 +6,10 @@ import ru.netology.data.DataHelper;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -32,14 +34,17 @@ public class PaymentCardPage extends StartPage {
     private final SelenideElement buttonContinue = $(byText("Продолжить"));
 
 //    селекторы для всплывающих окон
-    private final SelenideElement successNotification = $(byText("Операция одобрена Банком."));
-    private final SelenideElement failNotification = $(byText("Ошибка! Банк отказал в проведении операции."));
+    private final SelenideElement successNotification = $(withText("Операция одобрена Банком."));
+    private final SelenideElement failNotification = $(withText("Ошибка! Банк отказал в проведении операции."));
 
 //    селекторы для сообщений об ошибках ввода
-    private final SelenideElement errorFormatMessage = $(byText("Неверный формат"));
-    private final SelenideElement errorTermMessage = $(byText("Неверно указан срок действия карты"));
-    private final SelenideElement cardExpiredMessage = $(byText("Истёк срок действия карты"));
-    private final SelenideElement fieldFillRequiredMessage = $(byText("Поле обязательно для заполнения"));
+    private final SelenideElement errorFormatMessage = $(withText("Неверный формат"));
+    private final SelenideElement errorTermMessage = $(withText("Неверно указан срок действия карты"));
+    private final SelenideElement cardExpiredMessage = $(withText("Истёк срок действия карты"));
+    private final SelenideElement fieldFillRequiredMessage = $(withText("Поле обязательно для заполнения"));
+
+//    селектор для предупреждения об ошибке заполнения поля
+    private final ElementsCollection invalidNotification = $$(".input__sub");
 
 //    Проверка перехода на форму оплаты по дебетовой карте
     public void paymentCardPageHeader() {
@@ -70,10 +75,29 @@ public class PaymentCardPage extends StartPage {
 //    Проверка видимости всплывающего окна "Ошибка! Банк отказал в проведении операции."
     public void failNotificationPaymentCardPage() {
         failNotification.shouldBe(visible, Duration.ofSeconds(15));
-
     }
 
+//    Проверка видимости предупреждения о незаполненности всех полей в форме
+    public void fillAllField() {
+        for (SelenideElement x : invalidNotification) {
+            x.shouldBe(exactText("Поле обязательно для заполнения"));
+        }
+    }
 
+//      Проверка видимости предупреждения о незаполнености поля в форме для номера карты
+    public void fillCardNumberRequest() {
+        invalidNotification.first().shouldHave(exactText("Поле обязательно для заполнения"));
+    }
+
+//      Проверка видимости предупреждения о не заполненности поля в формах Год; Месяц; Владелец
+    public void fillRequest() {
+        fieldFillRequiredMessage.shouldBe(visible);
+    }
+
+//      Проверка видимости предупреждения о незаполненности поля в форме Код cvc
+    public void fillCVCRequest() {
+        invalidNotification.last().shouldBe(exactText("Поле обязательно для заполнения"));
+    }
     public void  errorFormatMessageCardPage() {
         errorFormatMessage.shouldBe(visible);
     }

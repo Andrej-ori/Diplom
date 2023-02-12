@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 
 
@@ -14,7 +15,7 @@ public class StartPage {
     private static final SelenideElement buyWithCreditCardButton = $(byText("Купить в кредит"));
 
 //   селектор для виджета "Путишествие дня"
-    private static final SelenideElement hedar = $(byText("Путешествие дня"));
+    private static final SelenideElement hedar = $(withText("Путешествие дня"));
 
 //   Проверка открытия страницы
     public void startPageHedar() {
