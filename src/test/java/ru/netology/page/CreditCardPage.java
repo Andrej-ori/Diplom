@@ -2,6 +2,7 @@ package ru.netology.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import ru.netology.data.DataHelper;
 
 import java.time.Duration;
@@ -48,11 +49,13 @@ public class CreditCardPage extends StartPage {
     private final ElementsCollection invalidNotification = $$(".input__sub");
 
     //    Проверка перехода на форму покупке тура в кредит
+    @Step("Проверка перехода на форму покупке тура в кредит")
     public void creditCardPageHeader() {
         head.shouldBe(visible);
     }
 
     //  Нажати кнопки "Купить"
+    @Step("Нажати кнопки \"Купить\"")
     public PaymentCardPage playWithDebitCardButton() {
         buyWithDebitCardButton.click();
         return new PaymentCardPage();
@@ -69,16 +72,19 @@ public class CreditCardPage extends StartPage {
     }
 
     //    Проверка видимости всплывающего окна "Операция одобрена Банком."
+    @Step("Проверка видимости всплывающего окна \"Операция одобрена Банком.\"")
     public void successNotificationCreditCardPage() {
         successNotification.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     //    Проверка видимости всплывающего окна "Ошибка! Банк отказал в проведении операции."
+    @Step("Проверка видимости всплывающего окна \"Ошибка! Банк отказал в проведении операции.\"")
     public void failNotificationCreditCardPage() {
         failNotification.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     //    Проверка видимости предупреждения о незаполненности всех полей в форме
+    @Step("Проверка видимости предупреждения о незаполненности всех полей в форме")
     public void fillAllField() {
         for (SelenideElement x : invalidNotification) {
             x.shouldBe(exactText("Поле обязательно для заполнения"));
@@ -86,18 +92,63 @@ public class CreditCardPage extends StartPage {
     }
 
     //      Проверка видимости предупреждения о незаполнености поля в форме для номера карты
+    @Step("Проверка видимости предупреждения о незаполнености поля в форме для номера карты")
     public void fillCardNumberRequest() {
         invalidNotification.first().shouldHave(exactText("Поле обязательно для заполнения"));
     }
 
     //      Проверка видимости предупреждения о не заполненности поля в формах Год; Месяц; Владелец
+    @Step("Проверка видимости предупреждения о не заполненности поля в формах")
     public void fillRequest() {
         fieldFillRequiredMessage.shouldBe(visible);
     }
 
     //      Проверка видимости предупреждения о незаполненности поля в форме Код cvc
+    @Step("Проверка видимости предупреждения о незаполненности поля в форме Код cvc")
     public void fillCVCRequest() {
         invalidNotification.last().shouldBe(exactText("Поле обязательно для заполнения"));
+    }
 
+    //    Проверка видимости предупреждения о неверно заполненном поле месяц
+    @Step("Проверка видимости предупреждения о неверно заполненном поле месяц")
+    public void invalidDateMont() {
+        errorTermMessage.shouldBe(visible);
+    }
+
+    //    Проверка видимости предупреждения о не верном формате заполнения поля месяц
+    @Step("Проверка видимости предупреждения о не верном формате заполнения поля месяц")
+
+    public void  errorFormatMessageCardPage() {
+        errorFormatMessage.shouldBe(visible);
+    }
+
+    //    Проверка видимости предупреждения о неверно заполненном поле Год
+    @Step("Проверка видимости предупреждения о неверно заполненном поле Год")
+    public void invalidDateYears() {
+        errorTermMessage.shouldBe(visible);
+    }
+
+    //    Проверка видимости предупреждения о неверно заполненном поле Год
+    @Step("Проверка видимости предупреждения о неверно заполненном поле Год")
+    public void invalidExpiredDateYears() {
+        cardExpiredMessage.shouldBe(visible);
+    }
+
+    //    Проверка видимости предупреждения о не верном формате заполнения поля Год
+    @Step("Проверка видимости предупреждения о не верном формате заполнения поля Год")
+    public void  errorFormatMessageCardPageYears() {
+        errorFormatMessage.shouldBe(visible);
+    }
+
+    //    Проверка видимости предупреждения о неверном формате заполнения поля Имя
+    @Step("Проверка видимости предупреждения о неверном формате заполнения поля Имя")
+    public void errorFormatMessageCardPageName() {
+        errorFormatMessage.shouldBe(visible);
+    }
+
+    //    Проверка видимости предупреждения о неверном формате заполнения поля Код CVC
+    @Step("Проверка видимости предупреждения о неверном формате заполнения поля Код CVC")
+    public void errorFormatMessageCardPageCVC() {
+        errorFormatMessage.shouldBe(visible);
     }
 }
