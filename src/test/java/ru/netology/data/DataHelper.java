@@ -35,8 +35,8 @@ public class DataHelper {
      */
     public static CardInfo getValidCardInfoApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -47,8 +47,8 @@ public class DataHelper {
      */
     public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpaceApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercaseSeparatedBySpace().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -59,8 +59,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphenApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercaseSeparatedByHyphen().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -71,8 +71,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoCurrentDateApprovedCardNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getCurrentDate().getYear(),
-                getCurrentDate().getMonth(),
+                getCurrentDateYear().getYear(),
+                getCurrentDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -85,8 +85,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoDeclinedCardNumber() {
         return new CardInfo(DeclinedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -96,8 +96,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpaceDeclinedCardNumber() {
         return new CardInfo(DeclinedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercaseSeparatedBySpace().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -108,8 +108,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphenDeclinedCardNumber() {
         return new CardInfo(DeclinedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercaseSeparatedByHyphen().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -120,8 +120,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoCurrentDateDeclinedCardNumber() {
         return new CardInfo(DeclinedCardNumber(),
-                getCurrentDate().getYear(),
-                getCurrentDate().getMonth(),
+                getCurrentDateYear().getYear(),
+                getCurrentDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -133,8 +133,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoRandomCardNumber() {
         return new CardInfo(RandomCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -145,8 +145,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoWithTwoWordsNameThroughSpaceRandomCardNumber() {
         return new CardInfo(RandomCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercaseSeparatedBySpace().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -157,8 +157,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoWithTwoWordsNameThroughHyphenRandomCardNumber() {
         return new CardInfo(RandomCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercaseSeparatedByHyphen().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -169,8 +169,8 @@ public class DataHelper {
     */
     public static CardInfo getValidCardInfoCurrentDateRandomCardNumber() {
         return new CardInfo(RandomCardNumber(),
-                getCurrentDate().getYear(),
-                getCurrentDate().getMonth(),
+                getCurrentDateYear().getYear(),
+                getCurrentDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -186,8 +186,8 @@ public class DataHelper {
     */
     public static CardInfo getInvalidCardInfoNameLowercase() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getInvalidNameInLowercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -198,8 +198,8 @@ public class DataHelper {
     */
     public static CardInfo getInvalidCardInfoNameInCyrillic() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getInvalidNameInCirillic().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -210,8 +210,8 @@ public class DataHelper {
     */
     public static CardInfo getInvCardInfoNameWithNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getInvalidNameWithNambers().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -222,8 +222,8 @@ public class DataHelper {
     */
     public static CardInfo getInvCardInfoNameWithSymbol() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getInvalidNameWithSymbol().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -234,8 +234,8 @@ public class DataHelper {
     */
     public static CardInfo getInvCardInfoNameInCN() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getInvalidNameInCN().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -249,7 +249,7 @@ public class DataHelper {
     public static CardInfo getInvalidCardInfoDateWithExpirationMoreThatFiveYears() {
         return new CardInfo(ApprovedCardNumber(),
                 getDateWithExpirationMoreThatFiveYears().getYear(),
-                getDateWithExpirationMoreThatFiveYears().getMonth(),
+                getDateWithExpirationMoreThatFiveYearsMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -261,7 +261,7 @@ public class DataHelper {
     public static CardInfo getInvCardInfoDateWithPreviousYears() {
         return new CardInfo(ApprovedCardNumber(),
                 getDateWithPreviousYears().getYear(),
-                getDateWithPreviousYears().getMonth(),
+                getDateWithPreviousYearsMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -273,7 +273,7 @@ public class DataHelper {
     public static CardInfo getInvalidCardInfoDateWithInvalidYearInfo() {
         return new CardInfo(ApprovedCardNumber(),
                 getDateWithInvalidYearInfo().getYear(),
-                getDateWithInvalidYearInfo().getMonth(),
+                getDateWithInvalidYearInfoMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -286,7 +286,7 @@ public class DataHelper {
     */
     public static CardInfo getInvCardInfoDateWithPreviousMonths() {
         return new CardInfo(ApprovedCardNumber(),
-                getDateWithPreviousMonths().getYear(),
+                getDateWithPreviousMonthsYear().getYear(),
                 getDateWithPreviousMonths().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
@@ -298,7 +298,7 @@ public class DataHelper {
     */
     public static CardInfo getInvCardInfoDateWithInvalidMonthInfo() {
         return new CardInfo(ApprovedCardNumber(),
-                getDateWithInvalidMonthInfo().getYear(),
+                getDateWithInvalidMonthInfoYear().getYear(),
                 getDateWithInvalidMonthInfo().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
@@ -310,7 +310,7 @@ public class DataHelper {
     */
     public static CardInfo getInvalidCardInfoDateWithInvalidMonthInfo00() {
         return new CardInfo(ApprovedCardNumber(),
-                getDateWithInvalidMonthInfo00().getYear(),
+                getDateWithInvalidMonthInfo00Year().getYear(),
                 getDateWithInvalidMonthInfo00().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
@@ -322,8 +322,8 @@ public class DataHelper {
     */
     public static CardInfo getInvalidCardInfoDateWithInvalidMonthInfoOneNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getDateWithInvalidMonthInfoOneNamber().getYear(),
-                getDateWithInvalidMonthInfoOneNamber().getMonth(),
+                getDateWithInvalidMonthInfoOneNumberYear().getYear(),
+                getDateWithInvalidMonthInfoOneNumber().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -336,8 +336,8 @@ public class DataHelper {
     */
     public static CardInfo getInvalidCardInfoCVCNumberWithTwoNumbers() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getInvalidCVCNumberWithTwoNumbers().getCVCNumber());
     }
@@ -348,8 +348,8 @@ public class DataHelper {
     */
     public static CardInfo getInvalidCardInfoCVCNumberWithSingleNumber() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getInvalidCVVNumberWithSingleNumber().getCVCNumber());
     }
@@ -362,8 +362,8 @@ public class DataHelper {
     */
     public static CardInfo getInvalidFormatCardInfoInvalidCardNumber() {
         return new CardInfo(InvalidFormatCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -374,11 +374,11 @@ public class DataHelper {
     Отправка формы с пустыми полями
     */
     public static CardInfo getCardInfoWithEmptyData() {
-        return new CardInfo("",
+        return new CardInfo(EmptyCardNumber(),
+                getEmptyDateYear().getYear(),
+                getEmptyDateMonth().getMonth(),
                 "",
-                "",
-                "",
-                "");
+                getEmptyCVCNumber().getCVCNumber());
     }
 
     /*
@@ -386,9 +386,9 @@ public class DataHelper {
     Валидное имя владельца(Латиница Верхний регистр), валидный CVC код
     */
     public static CardInfo getCardInfoWithEmptyCardNumber() {
-        return new CardInfo("",
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+        return new CardInfo(EmptyCardNumber(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -399,8 +399,8 @@ public class DataHelper {
     */
     public static CardInfo getCardInfoWithEmptyYear() {
         return new CardInfo(ApprovedCardNumber(),
-                "",
-                getValidDate().getMonth(),
+                getEmptyDateYear().getYear(),
+                getEmptyDateYearMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -411,8 +411,8 @@ public class DataHelper {
     */
     public static CardInfo getCardInfoWithEmptyMonth() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                "",
+                getEmptyDateYearMonthYear().getYear(),
+                getEmptyDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
                 getValidCVCNumber().getCVCNumber());
     }
@@ -423,8 +423,8 @@ public class DataHelper {
     */
     public static CardInfo getCardInfoWithEmptyUser() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 "",
                 getValidCVCNumber().getCVCNumber());
     }
@@ -435,9 +435,9 @@ public class DataHelper {
     */
     public static CardInfo getCardInfoWithEmptyCVC() {
         return new CardInfo(ApprovedCardNumber(),
-                getValidDate().getYear(),
-                getValidDate().getMonth(),
+                getValidDateYear().getYear(),
+                getValidDateMonth().getMonth(),
                 getValidNameInUppercase().getUserName(),
-                "");
+                getEmptyCVCNumber().getCVCNumber());
     }
 }
