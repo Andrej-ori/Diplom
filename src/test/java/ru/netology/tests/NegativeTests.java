@@ -3,13 +3,12 @@ package ru.netology.tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.netology.data.BaseSelenideTest;
 import ru.netology.page.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.data.DataHelper.*;
 
-public class NegativeTests extends BaseSelenideTest {
+public class NegativeTests {
 
     /*
             ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ
@@ -21,7 +20,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Пусто; Дата(год):  Пусто; Дата(Месяц): Пусто; Имя: Пусто; CVC: Пусто")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("Отправка формы покупки по дебитовой карте со всеми незаполненными полями")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -43,7 +42,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Пусто; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("Отправка формы покупки по дебитовой карте с пустым полем Номера карты")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -64,7 +63,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Пусто; Дата(Месяц): Валидный; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("Отправка формы покупки по дебитовой карте с пустым полем Год")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -85,7 +84,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Валидный; Дата(Месяц): Пусто; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("Отправка формы покупки по дебитовой карте с пустым полем Месяц")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -106,7 +105,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Пусто; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("Отправка формы покупки по дебитовой карте с пустым полем Владелец")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -127,7 +126,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Латиница Верхний регистр; CVC: Пусто")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("Отправка формы покупки по дебитовой карте с пустым полем CVC")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -150,7 +149,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Пусто; Дата(год): Пусто; Дата(Месяц): Пусто; Имя: Пусто; CVC: Пусто")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("Отправка формы покупке в кредит со всеми незаполненными полями")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -173,7 +172,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Пусто; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("Отправка формы покупке в кредит с пустым полем Номера карты")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -194,7 +193,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): Пусто; Дата(Месяц): Валидный; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("Отправка формы покупке в кредит с пустым полем Год")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -215,7 +214,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): Валидный; Дата(Месяц): Пусто; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("Отправка формы покупке в кредит с пустым полем Месяц")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -236,7 +235,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Пусто; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("Отправка формы покупке в кредит с пустым полем Владелец")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -257,7 +256,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Латиница Верхний регистр; CVC: Пусто")
     @Test
     @Feature("ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("Отправка формы покупке в кредит с пустым полем CVC")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.MINOR)
@@ -283,7 +282,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): 00; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -300,7 +299,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (13-99); Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -317,7 +316,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (0-9); Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -336,7 +335,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): 00; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -353,7 +352,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (13-99); Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -370,7 +369,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (0-9); Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -393,7 +392,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): прошедший ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНАЯ ДАТА МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -413,7 +412,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): прошедший ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ МЕСЯЦ НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНАЯ ДАТА МЕСЯЦА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -435,7 +434,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): До текущего; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ ГОД НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНАЯ ДАТА ГОДА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -452,7 +451,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Больше текущего на 6+ лет; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ ГОД НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНАЯ ДАТА ГОДА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -469,7 +468,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): (0-9); Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ ГОД НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ГОДА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -489,7 +488,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): До текущего; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ ГОД НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНАЯ ДАТА ГОДА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -506,7 +505,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): Больше текущего на 6+ лет; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ ГОД НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНАЯ ДАТА ГОДА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -523,7 +522,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год): (0-9); Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ ГОД НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ГОДА")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -545,7 +544,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Латиница Первая заглавная остальные строчные; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -562,7 +561,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Кириллица; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -579,7 +578,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Имя с цифрой; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -596,7 +595,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Спецсимволы; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -613,7 +612,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Иероглифы; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -633,7 +632,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Латиница Первая заглавная остальные строчные; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -650,7 +649,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Кириллица; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -667,7 +666,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Имя с цифрой; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -684,7 +683,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Спецсимволы; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -701,7 +700,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Иероглифы; CVC: Валидный")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"ИМЯ\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ ИМЕНИ")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -724,7 +723,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: НЕ ВАЛИДНЫЙ (две цифры)")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"Код CVC\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ CVC")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -741,7 +740,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: НЕ ВАЛИДНЫЙ (одна цифра)")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"Код CVC\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("ДЕБИТОВАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ CVC")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -761,7 +760,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: НЕ ВАЛИДНЫЙ (две цифры)")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"Код CVC\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ CVC")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
@@ -778,7 +777,7 @@ public class NegativeTests extends BaseSelenideTest {
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год): Текущий; Дата(Месяц): Текущий ; Имя: Латиница Верхний регистр; CVC: НЕ ВАЛИДНЫЙ (одна цифра)")
     @Test
     @Feature("ТЕСТЫ НА ЗАПОЛНЕНИЕ ПОЛЯ \"Код CVC\" НЕ ВАЛИДНЫМИ ДАННЫМИ")
-    @Epic("КРЕДИТНАЯ КАРТА")
+    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
     @Story("НЕ ВЕРНЫЙ ФОРМАТ CVC")
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.NORMAL)
