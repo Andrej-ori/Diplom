@@ -440,4 +440,4 @@ public class DataHelper {
                 getValidNameInUppercase().getUserName(),
                 getEmptyCVCNumber().getCVCNumber());
     }
-}
+}                                

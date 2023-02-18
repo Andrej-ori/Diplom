@@ -36,4 +36,19 @@ public class CardNumberGenerator {
     public static String EmptyCardNumber() {
         return "";
     }
+
+    /*
+Статус карты в базе
+ */
+    public static String getApprovedCardStatus() {
+        return "APPROVED";
+    }
+
+    public static String getDeclinedCardStatus() {
+        return "DECLINED";
+    }
+
+    public static String getRandomCardStatus() {
+        return null;
+    }
 }
