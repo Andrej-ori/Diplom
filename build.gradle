@@ -29,9 +29,8 @@ dependencies {
 
     testImplementation 'io.rest-assured:rest-assured:4.3.0'
 
-    testImplementation 'org.postgresql:postgresql:42.5.1'
-    testImplementation 'mysql:mysql-connector-java:8.0.19'
-
+    testImplementation 'org.postgresql:postgresql:42.4.0'
+    testImplementation 'mysql:mysql-connector-java:8.0.29'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
 
     testImplementation 'org.aspectj:aspectjweaver:1.9.5'
@@ -42,18 +41,14 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-java-commons:2.12.1'
     testImplementation 'io.qameta.allure:allure-selenide:2.12.1'
 
-
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.1.0'
     testImplementation 'com.codeborne:selenide:6.10.3'
 
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
-
 }
 
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-    systemProperty 'db.url', System.getProperty('db.url')
-    systemProperty 'db.user', System.getProperty('db.user', 'app')
-    systemProperty 'db.password', System.getProperty('db.password', 'pass')
+    systemProperty "dbUrl", System.getProperty("dbUrl")
 }
