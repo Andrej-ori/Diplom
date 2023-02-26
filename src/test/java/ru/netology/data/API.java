@@ -10,12 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class API {
 
-    @Value
-    public static class APIResponse {
-        private String status;
-    }
-
-    public static RequestSpecification requestSpec = new RequestSpecBuilder()
+    public static RequestSpecification requestSpecification = new RequestSpecBuilder()
             .setBaseUri("http://localhost")
             .setPort(8080)
             .setAccept(ContentType.JSON)
@@ -25,23 +20,32 @@ public class API {
 
     public static APIResponse getPaymentStatus(DataHelper.CardInfo cardInfo) {
         return given()
-                .spec(requestSpec)
+                .spec(requestSpecification)
                 .body(cardInfo)
                 .when()
                 .post("/api/v1/pay")
                 .then()
                 .statusCode(200)
-                .extract().response().as(APIResponse.class);
+                .extract()
+                .response()
+                .as(APIResponse.class);
     }
 
-    public static API getCreditStatus(DataHelper.CardInfo cardInfo) {
+    public static APIResponse getCreditStatus(DataHelper.CardInfo cardInfo){
         return given()
-                .spec(requestSpec)
+                .spec(requestSpecification)
                 .body(cardInfo)
                 .when()
-                .post("/api/v1/pay")
+                .post("/api/v1/credit")
                 .then()
                 .statusCode(200)
-                .extract().response().as(API.class);
+                .extract()
+                .response()
+                .as(APIResponse.class);
+    }
+
+    @Value
+    public static class APIResponse{
+        private String status;
     }
 }
