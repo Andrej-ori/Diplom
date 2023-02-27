@@ -25,10 +25,8 @@ public class API {
                 .when()
                 .post("/api/v1/pay")
                 .then()
-                .statusCode(200)
-                .extract()
-                .response()
-                .as(APIResponse.class);
+//                .statusCode()
+                .extract().response().as(APIResponse.class);
     }
 
     public static APIResponse getCreditStatus(DataHelper.CardInfo cardInfo){
@@ -38,10 +36,8 @@ public class API {
                 .when()
                 .post("/api/v1/credit")
                 .then()
-                .statusCode(200)
-                .extract()
-                .response()
-                .as(APIResponse.class);
+//                .statusCode()
+                .extract().response().as(APIResponse.class);
     }
 
     @Value

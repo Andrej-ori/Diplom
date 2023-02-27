@@ -24,17 +24,6 @@ public class DataBaseHelper {
     }
 
     @SneakyThrows
-    public static void setDown() {
-        setUp();
-        var sqlUpdateOne = "DELETE FROM payment_entity;";
-        var sqlUpdateTwo = "DELETE FROM credit_request_entity;";
-        var sqlUpdateThree = "DELETE FROM order_entity;";
-        runner.update(conn, sqlUpdateOne);
-        runner.update(conn, sqlUpdateTwo);
-        runner.update(conn, sqlUpdateThree);
-    }
-
-    @SneakyThrows
     public static String getStatusPaymentStatus() {
         setUp();;
         var codeSQL = "SELECT status FROM payment_entity ORDER BY created DESC";
@@ -47,7 +36,4 @@ public class DataBaseHelper {
         var codeQSL = "SELECT status FROM credit_request_entity ORDER BY created DESC";
         return runner.query(conn, codeQSL, new ScalarHandler<String>());
     }
-
-
-
 }

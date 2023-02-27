@@ -4,7 +4,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.netology.data.DataBaseHelper;
 
 import static ru.netology.data.API.getCreditStatus;
 import static ru.netology.data.API.getPaymentStatus;
@@ -17,14 +16,8 @@ public class APITest {
 
     @BeforeAll
     static void setUpAfterAll() {
-        DataBaseHelper.setDown();
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .screenshots(true).savePageSource(true));
-    }
-
-    @BeforeEach
-    public void setUp() {
-        DataBaseHelper.setDown();
     }
 
     @AfterAll

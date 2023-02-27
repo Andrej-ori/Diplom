@@ -4,28 +4,21 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.netology.data.DataBaseHelper;
 import ru.netology.page.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.data.CardNumberGenerator.*;
-import static ru.netology.data.DataBaseHelper.*;
+import static ru.netology.data.DataBaseHelper.getCreditStatus;
+import static ru.netology.data.DataBaseHelper.getStatusPaymentStatus;
 import static ru.netology.data.DataHelper.*;
 
 public class HappyTests {
 
     @BeforeAll
     static void setupAll() {
-        DataBaseHelper.setDown();
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .screenshots(true).savePageSource(true));
     }
-
-    @BeforeEach
-    public void setDown() {
-        DataBaseHelper.setDown();
-    }
-
 
     @AfterAll
     static void teardownAll() {
@@ -744,7 +737,7 @@ public class HappyTests {
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки по дебитовой карте ВАЛИДНЫМИ данными")
-    void shouldValidDebitCardApprovedCardNumberCheckingВatabase() {
+    void shouldValidDebitCardApprovedCardNumberCheckingDatabase() {
         open("http://localhost:8080");
         var startPage = new StartPage();
         var paymentCardPage = startPage.playWithDebitCardButton();
@@ -771,7 +764,7 @@ public class HappyTests {
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки по дебитовой карте ВАЛИДНЫМИ данными")
-    void shouldValidDebitCardDeclinedCardNumberCheckingВatabase() throws InterruptedException {
+    void shouldValidDebitCardDeclinedCardNumberCheckingDatabase() throws InterruptedException {
         open("http://localhost:8080");
         var startPage = new StartPage();
         var paymentCardPage = startPage.playWithDebitCardButton();
@@ -798,7 +791,7 @@ public class HappyTests {
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки по дебитовой карте ВАЛИДНЫМИ данными")
-    void shouldValidDebitCardRandomCardNumberCheckingВatabase() {
+    void shouldValidDebitCardRandomCardNumberCheckingDatabase() {
         open("http://localhost:8080");
         var startPage = new StartPage();
         var paymentCardPage = startPage.playWithDebitCardButton();
@@ -826,7 +819,7 @@ public class HappyTests {
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки в кредит ВАЛИДНЫМИ данными")
-    void shouldValidCreditCardApprovedCardNumberCheckingВatabase() {
+    void shouldValidCreditCardApprovedCardNumberCheckingDatabase() {
         open("http://localhost:8080");
         var startPage = new StartPage();
         var creditCardPage = startPage.playWithCreditCardButton();
@@ -853,7 +846,7 @@ public class HappyTests {
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки в кредит ВАЛИДНЫМИ данными")
-    void shouldValidCreditCardDeclinedCardNumberCheckingВatabase() throws InterruptedException {
+    void shouldValidCreditCardDeclinedCardNumberCheckingDatabase() throws InterruptedException {
         open("http://localhost:8080");
         var startPage = new StartPage();
         var creditCardPage = startPage.playWithCreditCardButton();
@@ -881,7 +874,7 @@ public class HappyTests {
     @Owner("Андрей студент 'Нетологии'")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки в кредит ВАЛИДНЫМИ данными")
-    void shouldValidCreditCardRandomCardNumberCheckingВatabase() {
+    void shouldValidCreditCardRandomCardNumberCheckingDatabase() {
         open("http://localhost:8080");
         var startPage = new StartPage();
         var creditCardPage = startPage.playWithCreditCardButton();
