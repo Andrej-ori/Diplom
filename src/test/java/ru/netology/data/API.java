@@ -4,7 +4,6 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import lombok.Value;
 
 import static io.restassured.RestAssured.given;
 
@@ -18,30 +17,23 @@ public class API {
             .log(LogDetail.ALL)
             .build();
 
-    public static APIResponse getPaymentStatus(DataHelper.CardInfo cardInfo) {
+    public static String PaymentStatus(DataHelper.CardInfo cardInfo) {
         return given()
                 .spec(requestSpecification)
                 .body(cardInfo)
                 .when()
                 .post("/api/v1/pay")
                 .then()
-//                .statusCode()
-                .extract().response().as(APIResponse.class);
+                .extract().response().asString();
     }
 
-    public static APIResponse getCreditStatus(DataHelper.CardInfo cardInfo){
+    public static String CreditStatus(DataHelper.CardInfo cardInfo){
         return given()
                 .spec(requestSpecification)
                 .body(cardInfo)
                 .when()
                 .post("/api/v1/credit")
                 .then()
-//                .statusCode()
-                .extract().response().as(APIResponse.class);
-    }
-
-    @Value
-    public static class APIResponse{
-        private String status;
+                .extract().response().asString();
     }
 }

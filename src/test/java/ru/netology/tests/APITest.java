@@ -5,10 +5,8 @@ import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 
-import static ru.netology.data.API.getCreditStatus;
-import static ru.netology.data.API.getPaymentStatus;
-import static ru.netology.data.CardNumberGenerator.getApprovedCardStatus;
-import static ru.netology.data.CardNumberGenerator.getDeclinedCardStatus;
+import static ru.netology.data.API.CreditStatus;
+import static ru.netology.data.API.PaymentStatus;
 import static ru.netology.data.DataHelper.getValidCardInfoApprovedCardNumber;
 import static ru.netology.data.DataHelper.getValidCardInfoDeclinedCardNumber;
 
@@ -33,8 +31,9 @@ public class APITest {
     @Severity(SeverityLevel.CRITICAL)
     void shouldGetStatusForApprovedCardNumberWithValidPaymentPage() {
         var validApprovedCard = getValidCardInfoApprovedCardNumber();
-        var status = getPaymentStatus(validApprovedCard);
-        Assertions.assertEquals(getApprovedCardStatus(), status.getStatus());
+        var status = PaymentStatus(validApprovedCard);
+        Assertions.assertEquals(true, status.contains("APPROVED"));
+
     }
 
     @DisplayName("API тест для одобренной карты для формы покупки тура в кредит")
@@ -45,8 +44,8 @@ public class APITest {
     @Severity(SeverityLevel.CRITICAL)
     void shouldGetStatusForApprovedCardNumberWithValidCreditPage() {
         var validApprovedCard = getValidCardInfoApprovedCardNumber();
-        var status = getCreditStatus(validApprovedCard);
-        Assertions.assertEquals(getApprovedCardStatus(), status.getStatus());
+        var status = CreditStatus(validApprovedCard);
+        Assertions.assertEquals(true, status.contains("APPROVED"));
     }
 
     @DisplayName("API тест для заблокированной карты для формы оплаты по дедитовой карте")
@@ -57,8 +56,8 @@ public class APITest {
     @Severity(SeverityLevel.CRITICAL)
     void shouldGetStatusForDeclinedCardNumberWithValidPaymentPage() {
         var validDeclinedCard = getValidCardInfoDeclinedCardNumber();
-        var status = getPaymentStatus(validDeclinedCard);
-        Assertions.assertEquals(getDeclinedCardStatus(), status.getStatus());
+        var status = PaymentStatus(validDeclinedCard);
+        Assertions.assertEquals(true, status.contains("DECLINED"));
     }
 
     @DisplayName("API тест для заблокированной карты для формы покупки тура в кредит")
@@ -69,7 +68,7 @@ public class APITest {
     @Severity(SeverityLevel.CRITICAL)
     void shouldGetStatusForDaclinedCardNumberWithValidCreditPage() {
         var validDeclinedCard = getValidCardInfoDeclinedCardNumber();
-        var status = getCreditStatus(validDeclinedCard);
-        Assertions.assertEquals(getDeclinedCardStatus(), status.getStatus());
+        var status = CreditStatus(validDeclinedCard);
+        Assertions.assertEquals(true, status.contains("DECLINED"));
     }
 }

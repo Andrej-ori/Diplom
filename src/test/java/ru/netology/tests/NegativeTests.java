@@ -1,6 +1,10 @@
 package ru.netology.tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.netology.page.StartPage;
@@ -9,6 +13,17 @@ import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.data.DataHelper.*;
 
 public class NegativeTests {
+
+    @BeforeAll
+    static void setupAll() {
+        SelenideLogger.addListener("allure", new AllureSelenide()
+                .screenshots(true).savePageSource(true));
+    }
+
+    @AfterAll
+    static void teardownAll() {
+        SelenideLogger.removeListener("allure");
+    }
 
     /*
             ТЕСТЫ НА ОТПРАВКУ ПУСТЫХ ФОРМ
@@ -293,7 +308,7 @@ public class NegativeTests {
         var paymentCardPage = startPage.playWithDebitCardButton();
         var invalidCardInfo = getInvalidCardInfoDateWithInvalidMonthInfo00();
         paymentCardPage.fillTheForm(invalidCardInfo);
-        paymentCardPage.errorFormatMessageCardPage();
+        paymentCardPage.invalidDateMont();
     }
 
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (13-99); Имя: Латиница Верхний регистр; CVC: Валидный")
@@ -310,7 +325,7 @@ public class NegativeTests {
         var paymentCardPage = startPage.playWithDebitCardButton();
         var invalidCardInfo = getInvCardInfoDateWithInvalidMonthInfo();
         paymentCardPage.fillTheForm(invalidCardInfo);
-        paymentCardPage.errorFormatMessageCardPage();
+        paymentCardPage.invalidDateMont();
     }
 
     @DisplayName("Форма: Дебит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (0-9); Имя: Латиница Верхний регистр; CVC: Валидный")
@@ -346,7 +361,7 @@ public class NegativeTests {
         var creditCardPage = startPage.playWithCreditCardButton();
         var invalidCardInfo = getInvalidCardInfoDateWithInvalidMonthInfo00();
         creditCardPage.fillTheForm(invalidCardInfo);
-        creditCardPage.errorFormatMessageCardPage();
+        creditCardPage.invalidDateMont();
     }
 
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (13-99); Имя: Латиница Верхний регистр; CVC: Валидный")
@@ -363,7 +378,7 @@ public class NegativeTests {
         var creditCardPage = startPage.playWithCreditCardButton();
         var invalidCardInfo = getInvCardInfoDateWithInvalidMonthInfo();
         creditCardPage.fillTheForm(invalidCardInfo);
-        creditCardPage.errorFormatMessageCardPage();
+        creditCardPage.invalidDateMont();
     }
 
     @DisplayName("Форма: Кредит; Номер карты: Одобреный; Дата(год):  Текущий; Дата(Месяц): (0-9); Имя: Латиница Верхний регистр; CVC: Валидный")
