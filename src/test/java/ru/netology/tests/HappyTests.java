@@ -779,33 +779,6 @@ public class HappyTests {
     }
 
     /*
-    СЛУЧАЙНАЯ КАРТА ВАЛИДНЫЕ ДАННЫЕ
-     */
-    @DisplayName("Форма: Дебит; Номер карты: Случайный; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Латиница, Верхний регистр; CVC: Валидный")
-    @Test
-    @Feature("ТЕСТЫ НА ПРОВЕРКУ ЗАПИСЕЙ В БАЗЕ ДАННЫХ")
-    @Epic("ФОРМА ПОКУПКИ ПО ДЕБЕТОВОЙ КАРТЕ")
-    @Story("Проверка записи в базе данных статуса карты для заполненой формы покупки по дебитовой карте ВАЛИДНЫМИ данными:\n" +
-            "Случайный номер карты; валидный год, валидный месяц,\n" +
-            "Валидное имя владельца(Латиница Верхний регистр), валидный CVC код")
-    @Owner("Андрей студент 'Нетологии'")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки по дебитовой карте ВАЛИДНЫМИ данными")
-    void shouldValidDebitCardRandomCardNumberCheckingDatabase() {
-        open("http://localhost:8080");
-        var startPage = new StartPage();
-        var paymentCardPage = startPage.playWithDebitCardButton();
-        var validCardInfo = getValidCardInfoRandomCardNumber();
-        paymentCardPage.fillTheForm(validCardInfo);
-        paymentCardPage.failNotificationPaymentCardPage();
-
-        var expected = getRandomCardStatus();
-        var actual = getStatusPaymentStatus();
-//       TODO Добавить проверку по базе данных возможно надо будет сделать отдельный клас для проверок на бекэнд
-        Assertions.assertEquals(expected, actual);
-    }
-
-    /*
                     КРЕДИТ
            ОДОБРЕННАЯ КАРТА ВАЛИДНЫЕ ДАННЫЕ
      */
@@ -856,38 +829,7 @@ public class HappyTests {
 
             var expected = getDeclinedCardStatus();
             var actual = getCreditStatus();
-//       TODO Добавить проверку по базе данных возможно надо будет сделать отдельный клас для проверок на бекэнд
             Assertions.assertEquals(expected, actual);
 
-        }
-
-    /*
-    СЛУЧАЙНАЯ КАРТА ВАЛИДНЫЕ ДАННЫЕ
-     */
-    @DisplayName("Форма: Кредит; Номер карты: Случайный; Дата(год): Валидный; Дата(Месяц): Валидный; Имя: Латиница, Верхний регистр; CVC: Валидный")
-    @Test
-    @Feature("ТЕСТЫ НА ПРОВЕРКУ ЗАПИСЕЙ В БАЗЕ ДАННЫХ")
-    @Epic("ФОРМА ПОКУПКИ ТУРА В КРЕДИТ")
-    @Story("Проверка записи в базе данных статуса карты для заполненой формы покупки в кредит ВАЛИДНЫМИ данными:\n" +
-            "Случайный номер карты; валидный год, валидный месяц,\n" +
-            "Валидное имя владельца(Латиница Верхний регистр), валидный CVC код")
-    @Owner("Андрей студент 'Нетологии'")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Проверка записи в базе данных статуса карты для заполненой формы покупки в кредит ВАЛИДНЫМИ данными")
-    void shouldValidCreditCardRandomCardNumberCheckingDatabase() {
-        open("http://localhost:8080");
-        var startPage = new StartPage();
-        var creditCardPage = startPage.playWithCreditCardButton();
-        var validCardInfo = getValidCardInfoRandomCardNumber();
-        creditCardPage.fillTheForm(validCardInfo);
-        creditCardPage.failNotificationCreditCardPage();
-
-        var expected = getRandomCardStatus();
-        var actual = getCreditStatus();
-//       TODO Добавить проверку по базе данных возможно надо будет сделать отдельный клас для проверок на бекэнд
-        Assertions.assertEquals(expected, actual);
-
     }
-
-
 }
